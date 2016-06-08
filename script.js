@@ -13,6 +13,9 @@ $.ajax({
           var celsius = resp2.main.temp-273;
           celsius = Math.round(celsius);
           $("#temp").html(celsius);
+          var iconName = resp2.weather[0].icon;
+          var iconUrl = "http://openweathermap.org/img/w/"+iconName+".png";
+          $("#weather-icon").attr("src", iconUrl);
         }
       });
     }
